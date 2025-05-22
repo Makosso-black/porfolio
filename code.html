@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">Mon Portfolio</div>
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#competance">Compétence</a></li>
+      <li><a href="#contacte">Contacte</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="accueil">
+    <img class="profile-photo" src="image/IMG_20241105_134342.jpg" alt="Photo de profil" />
+    <h1>Bienvenue sur mon portfolio</h1>
+    <p class="accueil-content">Je suis un développeur passionné prêt à relever de nouveaux défis et à créer des solutions web modernes et performantes.</p>
+  </section>
+
+  <section id="competance">
+    <h2>Mes Compétences</h2>
+    <div class="competences-list">
+      <div class="competence-item">HTML5</div>
+      <div class="competence-item">CSS3</div>
+      <div class="competence-item">JavaScript</div>
+      <div class="competence-item">React</div>
+      <div class="competence-item">js-Script</div>
+      <div class="competence-item">Git & GitHub</div>
+      <div class="competence-item">Responsive design</div>
+    </div>
+  </section>
+
+  <section id="contacte">
+    <h2>Contacte</h2>
+    <form id="contactForm" onsubmit="return handleSubmit(event)" novalidate>
+      <label for="name">Nom</label>
+      <input type="text" id="name" name="name" required placeholder="Votre nom" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="Votre email" />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Votre message"></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+</main>
+
+<footer style="color: #09eeee;">
+  © 2024 Jhon black. Tous droits réservés.
+
+<a href="mailto:benijhonblackmakosso@gmail.com";target="">Envoyer un e-mail</a>
+
+</footer>
+
+<script>
+  function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+
+    if (!name || !email || !message) {
+      alert("Veuillez remplir tous les champs s'il vous plaît.");
+      return false;
+    }
+
+    // Simple email format validation
+    const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Veuillez saisir une adresse email valide.");
+      return false;
+    }
+
+    alert(`Merci, ${name} ! Votre message a été envoyé.`);
+    form.reset();
+    return true;
+  }
+</script>
+</body>
+</html>

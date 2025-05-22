@@ -1,0 +1,188 @@
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    color: #141414;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    background-image: url(image/tt.jpg);
+  }
+  a {
+    color: #0a5052;
+    text-decoration: none;
+  }
+  a:hover {
+    color:rgb(6, 197, 255);
+  }
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #f0f4f4;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  nav {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    align-items: center;
+  }
+  nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #03b5fc;
+    user-select: none;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav ul li {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  
+  main {
+    padding: 6rem 1.5rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+
+  
+    overflow: hidden;
+    max-height: 0;
+    animation: curtainDrop 1.8s ease forwards;
+    animation-delay: 0.5s;
+  }
+  @keyframes curtainDrop {
+    0% {
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      max-height: 3000px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  section {
+    margin-bottom: 4rem;
+  }
+  h1, h2 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #04eeff;
+    text-align: center;
+  }
+  .accueil-content {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .profile-photo {
+    display: block;
+    margin: 2rem auto 0.5rem;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #000000;
+    border: 3px solid #0267ff;
+  }
+  .competences-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .competence-item {
+    background: rgba(26, 233, 236, 0.1);
+    border: 2px solid #06c9faee;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    min-width: 120px;
+    text-align: center;
+    font-weight: 600;
+    color: #000000;
+    transition: background-color 0.3s ease;
+    cursor: default;
+  }
+  .competence-item:hover {
+    background: #00eeff;
+    color: #e0e0e0;
+  }
+  form {
+    max-width: 500px;
+    margin: 2rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #017374;
+  }
+  input, textarea {
+    font-family: inherit;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1rem;
+    resize: vertical;
+    color: #333;
+  }
+  input:focus, textarea:focus {
+    box-shadow: 0 0 10px #00e1ff;
+    border-color: #017374;
+  }
+  button {
+    background-color: #046bf3;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #00a4e6;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: #000000;
+  }
+
+
+  @media (max-width: 600px) {
+    nav ul {
+      gap: 1rem;
+    }
+    .competences-list {
+      gap: 1rem;
+    }
+    main {
+      padding: 5rem 1rem 3rem;
+    }}
+    footer{
+      background-color: white;
+    }
